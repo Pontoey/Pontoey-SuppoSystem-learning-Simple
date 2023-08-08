@@ -5,129 +5,624 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz with Score</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href="css/index/style.css" />
 </head>
-<body>
+<body >
+<style>
+    body{
+        background-color: #f8f3f3;
+        /* font-family: 'FontName', sans-serif; */
+    }
+</style>
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-md nav-barCustom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img
+          src="assets/logo/Logo.png"
+          alt="Logo"
+          width="40"
+          height="40"
+          class="d-inline-block align-text-top"
+        />
+        <span class="textBrand">MATH</span>
+      </a>
 
-<div class="container mt-5">
-    <h1>Quiz: World Capitals</h1>
-    <form id="quizForm">
-        <div class="mb-3">
-            <label class="form-label">1. What is the capital of France?</label>
+      <!-- Add the hamburger menu button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu Right side -->
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNav"
+      >
+        <ul class="navbar-nav menu-navbar">
+          <li class="nav-item">
+            <a href="index.html" class="btn">หน้าหลัก</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="#" class="btn">วิธีการใช้งาน</a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="login.html" class="btn btn-login">เริ่มเรียน</a>
+          </li> -->
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Navbar -->
+<div class="container mt-1 position-relative">
+    <div class="card position-absolute top-0 start-50 translate-middle-x " style="width: 88%; background-color: aliceblue;">
+        <div class="card-header"  style="background-color: #d15083;  color: white;">
+            <h3 class="mt-2">แบบทดสอบก่อนเรียน</h3>
+            </div>
+        <div class="card-body">
+            
+            <form id="quizForm">
+                <div class="mb-3">
+                            <label class="form-label">1. ประโยคสัญลักษณ์ข้อใดเป็นสมการเชิงเส้นตัวแปรเดียว?</label>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">a) 4x - 6 = 20</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">b) 6x + 3 < 18 </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">c) 3x + 7 > 10 </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                    <label class="form-check-label" for="q1d">d) 3y + 2 ไม่เท่ากับ 4</label>
+                                </div>
+                                
+                            </div>
+                            <!-- More options for question 1... -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">2. 5 เป็นคำตอบของสมการข้อใด?</label>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">a) 7(x + 1) - 6 = 22</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">b) 7(x + 1) - 6 = 24</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">c) 4(x + 2) + 5 = 21</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                    <label class="form-check-label" for="q1d">d) 2(x + 2) + 8 = 22</label>
+                                </div>
+                                
+                            </div>
+                            <!-- More options for question 2... -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">3.  คำตอบของสมการ y + 4 = 4 + y คือข้อใด?</label>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">a) 3</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">b) 4</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">c) จำนวนทุกจำนวน</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                    <label class="form-check-label" for="q1d">d) ไม่มีจำนวนใดเป็นคำตอบ</label>
+                                </div>
+                                
+                            </div>
+                            <!-- More options for question 3... -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">4. ข้อใดเป็นคำตอบของสมการ 3(x - 1) + 2(x - 5) = 7(x + 11)?</label>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">a) -42</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">b) -43</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">c) -44</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                    <label class="form-check-label" for="q1d">d) -45</label>
+                                </div>
+                                
+                            </div>
+                            <!-- More options for question 4... -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">5. ค่าของ x ที่ทำให้สมการ 2(x + 5) - 5 = 25 เป็นจริงคือข้อใด ?</label>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">a) 12</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">b) 11</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">c) 10</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                    <label class="form-check-label" for="q1d">d) 9</label>
+                                </div>
+                                
+                            </div>
+                            <!-- More options for question 5... -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">6. สมการการหาค่าของคำตอบของสมการนี้ควรทำอย่างไรก่อน?</label>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">a) นำ 3 มาหารทั้งสองข้างของสมการ</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">b) นำ 6 มาบวกทั้งสองข้างของสมการ</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">c) นำ 4 มาคูณทั้งสองข้างของสมการ</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                    <label class="form-check-label" for="q1d">d) ทำขั้นตอนใน ก ถึง ค ข้อใดก่อนก็ได้</label>
+                                </div>
+                                
+                            </div>
+                            <!-- More options for question 6... -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">7. “แดงมีเงินจำนวนหนึ่งแบ่งให้ปรานี 100  บาท  ยังเหลืออีก  120  บาท” ข้อใดเป็นสมการที่สอดคล้องกับประโยคนี้?</label>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">a) 100  =  120  -  y </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">b) y  +  100  =  120</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">c) y  -  100  =  120</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                    <label class="form-check-label" for="q1d">d) y  =  10</label>
+                                </div>
+                                
+                            </div>
+                            <!-- More options for question 7... -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">8. มีไข่ไก่ 40 ฟอง ไข่แตกไปจำนวนหนึ่ง เหลือไข่  36 ฟอง ถ้าให้  x  คือจำนวนไข่ที่แตก?</label>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">a) 40  -  x  =  36	</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">b) x  +  36  =  40</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">c) 40  -  36  =  x	</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                    <label class="form-check-label" for="q1d">d) ถูกทุกข้อ</label>
+                                </div>
+                                
+                            </div>
+                            <!-- More options for question 8... -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">9. 6 เท่าของเลขจำนวนหนึ่งมากกว่า 30 อยู่ 15 เขียนเป็นสมการได้อย่างไร?</label>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">a) 6x  +  30  =  15</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">b) 6x  +  30  =  15</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">c) 6x  +  15  =  30</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                    <label class="form-check-label" for="q1d">d) 30  -  6x  =  15</label>
+                                </div>
+                                
+                            </div>
+                            <!-- More options for question 9... -->
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">10. แบ่งเงินจำนวนหนึ่งให้เด็ก  5  คน ได้รับคนละ 8  บาท ยังเหลืออีก  2  บาท เงินจำนวนนั้นมีกี่บาท?</label>
+                            <div class="form-check">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                                    <label class="form-check-label" for="q1a">a) 18</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                    <label class="form-check-label" for="q1b">b) 42</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                    <label class="form-check-label" for="q1c">c) 50</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                    <label class="form-check-label" for="q1d">d) 52</label>
+                                </div>
+                                
+                            </div>
+                            <!-- More options for question 10... -->
+                        </div>
+<div class="mb-3">
+            <label class="form-label">11. จำนวนคี่สามจำนวนเรียงกันรวมกันได้  27   ถ้าจำนวนน้อยที่สุดเป็น  x  จำนวนมากที่สุดจะเป็นจำนวนในข้อใด?</label>
             <div class="form-check">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
-                    <label class="form-check-label" for="q1a">a) Rome</label>
+                    <label class="form-check-label" for="q1a">a) 5</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
-                    <label class="form-check-label" for="q1b">b) Paris</label>
+                    <label class="form-check-label" for="q1b">b) 9</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
-                    <label class="form-check-label" for="q1c">c) Madrid</label>
+                    <label class="form-check-label" for="q1c">c) 11</label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
-                    <label class="form-check-label" for="q1d">d) London</label>
+                    <label class="form-check-label" for="q1d">d) 15</label>
                 </div>
                 
             </div>
-            <!-- More options for question 1... -->
+            <!-- More options for question 11... -->
         </div>
         <div class="mb-3">
-            <label class="form-label">2. What is the capital of France?</label>
+            <label class="form-label">12. ส้ม 30 ผล ถูกแบ่งเป็นสองกองโดย 3 เท่าของกองมากเท่ากับ 7 เท่า ของกองน้อย  ส้มกองน้อยมีกี่ผล?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2a" value="a">
-                    <label class="form-check-label" for="q1a">a) Rome</label>
+                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">a) 9</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2b" value="b">
-                    <label class="form-check-label" for="q1b">b) Paris</label>
+                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b">b) 12</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2c" value="c">
-                    <label class="form-check-label" for="q1c">c) Madrid</label>
+                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c">c) 14</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q2" id="q2d" value="d">
-                    <label class="form-check-label" for="q1d">d) London</label>
+                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                    <label class="form-check-label" for="q1d">d) 16</label>
                 </div>
                 
             </div>
-            <!-- More options for question 1... -->
+            <!-- More options for question 12... -->
         </div>
         <div class="mb-3">
-            <label class="form-label">2. What is the capital of France?</label>
+            <label class="form-label">13. จงหาคำตอบของสมการ x + 2 + 3x - 5 = -4x + 1?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q3" id="q3a" value="a">
-                    <label class="form-check-label" for="q1a">a) Rome</label>
+                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">a) 0.3</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q3" id="q3b" value="b">
-                    <label class="form-check-label" for="q1b">b) Paris</label>
+                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b">b) 0.5</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q3" id="q3c" value="c">
-                    <label class="form-check-label" for="q1c">c) Madrid</label>
+                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c">c) 1.5</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="q3" id="q3d" value="d">
-                    <label class="form-check-label" for="q1d">d) London</label>
+                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                    <label class="form-check-label" for="q1d">d) 2.0</label>
                 </div>
                 
             </div>
-            <!-- More options for question 1... -->
+            <!-- More options for question 13... -->
         </div>
+        <div class="mb-3">
+            <label class="form-label">14. จำนวนที่น้อยกว่าสี่เท่าของ m อยู่ 13 คือจำนวนข้อใด?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">a) 4m-13</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b">b) 13-4m</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c">c) 4m<13</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                    <label class="form-check-label" for="q1d">d) 4(m-13)</label>
+                </div>
+                
+            </div>
+            <!-- More options for question 14... -->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">15. ข้อใดเป็นสมการ?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">a) จำนวนที่น้อยกว่า 100 อยู่ 5</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b">b) ชานนท์มีอายุมากกว่าชาตรี</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c">c) โมไนยมีเงินอยู่ 150 บาท</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                    <label class="form-check-label" for="q1d">d) ห้องนี้มีจำนวนนักเรียนชายเท่ากับนักเรียนหญิง</label>
+                </div>
+                
+            </div>
+            <!-- More options for question 15... -->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">16. “สองเท่าของ a น้อยกว่า 11 อยู่ 5” เขียนแทนได้ด้วยประโยคสัญลักษณ์ข้อใด?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">a) 2a+11=5</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b">b) 5-2a=11</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c">c) 2a-11=5</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                    <label class="form-check-label" for="q1d">d) 11-2a-5</label>
+                </div>
+                
+            </div>
+            <!-- More options for question 16... -->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">17. ถ้า a - 4 = 7, b + 3 = 8 แล้ว a - b มีค่าเท่าไร?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">a) 6</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b">b) 8</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c">c) 14</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                    <label class="form-check-label" for="q1d">d) 16</label>
+                </div>
+                
+            </div>
+            <!-- More options for question 17... -->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">18. คำตอบของสมการ x + 9 = 7 ตรงกับคำตอบของสมการใด?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">a) X+2=0</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b">b) X-7=9</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c">c) X+8=10</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                    <label class="form-check-label" for="q1d">d) 2-x=0</label>
+                </div>
+                
+            </div>
+            <!-- More options for question 18... -->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">19. ถ้า 18x - 6(3x + 1) = 8x - 5(x - 3) แล้ว x มีค่าเท่าใด ?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">a) 3</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b">b) 7</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c">c) -3</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                    <label class="form-check-label" for="q1d">d) -7</label>
+                </div>
+                
+            </div>
+            <!-- More options for question 19... -->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">20. ถ้า a - 4 = 7, b + 3 = 8 แล้ว a - b มีค่าเท่าไร?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">a) 6</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b">b) 8</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c">c) 14</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                    <label class="form-check-label" for="q1d">d) 16</label>
+                </div>
+                
+            </div>
+            <!-- More options for question 20... -->
+        </div>
+                  <!-- More questions... -->
+        </div>
+        <div class="mt-1 ms-2 ml-2 mb-2" >
+            <div id="result" style="color: red;"></div>
+            <button type="submit" class="btn " style="background-color: #d15083; color: white; font-weight: bold; font-size: 14px;">Submit</button>
+            
+        </div>
+    </div>
+ </div>
         <!-- More questions... -->
-        <button type="submit" class="btn btn-primary">Submit</button>
+        
+      
     </form>
-    <div id="result" class="mt-3"></div>
-    <button id="dowlode" style="display: none;">downlode</button>
+    
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     const quizForm = document.getElementById('quizForm');
     const resultDiv = document.getElementById('result');
+   
+
+    // Load score from Local Storage if available
+    let savedScore = localStorage.getItem('quizScore');
+    if (savedScore !== null) {
+        resultDiv.innerHTML = savedScore;
+        if (parseFloat(savedScore) >= 50) {
+            dowButton.style.display = 'block';
+        } else {
+            dowButton.style.display = 'none';
+        }
+    }
 
     quizForm.addEventListener('submit', function (event) {
-        event.preventDefault();
+    event.preventDefault();
 
-        // Define correct answers and initialize score
-        const correctAnswers = {
-            q1: 'b',
-            q2: 'a',
-            q3: 'c' // Correct answer for question 1
-            // Add correct answers for other questions...
-        };
-        let score = 0;
-        let dow = document.getElementById('dowlode')
-        // Iterate through form elements and check answers
-        for (const element of quizForm.elements) {
-            if (element.type === 'radio' && element.checked) {
-                const questionName = element.name;
-                const userAnswer = element.value;
+    // กำหนดคำตอบที่ถูกต้องและเตรียมคะแนน
+    const correctAnswers = {
+        q1: 'a',
+        q2: 'b',
+        q3: 'c', 
+       
+        
+        // เพิ่มคำตอบที่ถูกต้องสำหรับคำถามอื่น...
+    };
+    let score = 0;
+    let answeredAllQuestions = true; // สมมติว่าตอนเริ่มต้นเป็น true
 
-                if (correctAnswers[questionName] === userAnswer) {
-                    score++;
-                }
+ 
+    // if answer all questions then calculate score and show result and set answeredAllQuestions to true and if not answered all questions then set answeredAllQuestions to false
+    // ตรวจสอบคำตอบของคำถามแต่ละข้อ และบันทึกคะแนน ถ้าตอบถูก และตรวจสอบว่าตอบครบทุกข้อหรือไม่ 
+    for (let i = 1; i <= Object.keys(correctAnswers).length; i++) {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (answer === null) {
+            answeredAllQuestions = false;
+            break;
+        }
+        console.log('answer',answer.value);
+    }
+
+    for (const element of quizForm.elements) {
+    if (element.type === 'radio') {
+        if (element.checked) {
+            const questionName = element.name;
+            const userAnswer = element.value.trim();
+            
+            if (correctAnswers[questionName] === userAnswer) {
+                score++;
             }
         }
+        
+    }
+}
+    
 
-        // Display the score
-        const totalQuestions = Object.keys(correctAnswers).length;
-        const scorePercentage = (score / totalQuestions) * 100;
-        resultDiv.innerHTML = `Your score: ${score} out of ${totalQuestions} (${scorePercentage.toFixed(2)}%)`;
+    // แสดงคะแนน
+    const totalQuestions = Object.keys(correctAnswers).length;
+    const scorePercentage = (score / totalQuestions) * 100;
+    
+    // const scoreMessage = (score * 100)
 
-        if(scorePercentage >= 50){
-            dow.style.display= 'block'
-        }
-        else{
-            dow.style.display= 'none'
-        }
-    });
+    if (answeredAllQuestions) { // ตรวจสอบว่าตอบคำถามทุกข้อหรือไม่
+        resultDiv.innerHTML = `คะแนนของคุณ: ${score} จาก ${totalQuestions} (${scorePercentage.toFixed(2)}%)`;
+        window.open('next-page.html', '_self');
+        // บันทึกคะแนนลงใน Local Storage
+        localStorage.setItem('Scorequiz', scorePercentage);
+    } else {
+        resultDiv.innerHTML = 'กรุณาตอบคำถามทุกข้อก่อนที่จะส่งคำตอบ';
+    }
+});
 </script>
+
 </body>
 </html>
