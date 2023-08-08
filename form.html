@@ -610,13 +610,20 @@
     // แสดงคะแนน
     const totalQuestions = Object.keys(correctAnswers).length;
     const scorePercentage = (score / totalQuestions) * 100;
+    // const scorePercentage = 40
     
     // const scoreMessage = (score * 100)
 
     if (answeredAllQuestions) { // ตรวจสอบว่าตอบคำถามทุกข้อหรือไม่
         resultDiv.innerHTML = `คะแนนของคุณ: ${score} จาก ${totalQuestions} (${scorePercentage.toFixed(2)}%)`;
-        window.open('next-page.html', '_self');
+       
         // บันทึกคะแนนลงใน Local Storage
+        if(scorePercentage >= 50){
+            window.open('next-page.html', '_self');
+        }
+        else{
+            window.open('vdo.html', '_self');
+        }
         localStorage.setItem('Scorequiz', scorePercentage);
     } else {
         resultDiv.innerHTML = 'กรุณาตอบคำถามทุกข้อก่อนที่จะส่งคำตอบ';
